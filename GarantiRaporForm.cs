@@ -12,8 +12,10 @@ namespace garantiTakip
 {
     public partial class GarantiRaporForm : Form
     {
-        public GarantiRaporForm()
+        MDIParent1 Form;
+        public GarantiRaporForm(MDIParent1 frm)
         {
+            Form = frm;
             InitializeComponent();
         }
 
@@ -27,6 +29,18 @@ namespace garantiTakip
             {
                 listBox1.Items.Add(item);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            
+            
+
+            
+            Form.garantiVeHizmetToolStripMenuItem_Click(sender, e);
+
+            this.Hide();
         }
     }
 }

@@ -59,25 +59,31 @@ namespace garantiTakip
 
         private void btn_Sil_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int a = int.Parse(textBox1.Text);
-                if (textBox1.Text != null)
-                {
-
-
-                    var sil = db.tbl_cari.Where(w => w.IND == a).FirstOrDefault();
-                    db.tbl_cari.Remove(sil);
-                    db.SaveChanges();
-                    frmSil_Load(sender, e);
-                }
-
-            }
-            catch
+            //try
+            //{
+            int a = int.Parse(textBox1.Text);
+            if (textBox1.Text != null)
             {
 
-                MessageBox.Show("Kayıt Bulunamadı");
+
+                var sil = db.tbl_cari.Where(w => w.IND == a).FirstOrDefault();
+
+                tbl_cari cari = db.tbl_cari.Find(sil.IND);
+
+                tbl_baslangicBitisTarih baslangicBitisTarih = new tbl_baslangicBitisTarih();
+                baslangicBitisTarih = db.tbl_baslangicBitisTarih.Find(cari.BASBITTAR);
+                db.tbl_baslangicBitisTarih.Remove(baslangicBitisTarih);
+                db.tbl_cari.Remove(sil);
+                db.SaveChanges();
+                frmSil_Load(sender, e);
             }
+
+            //}
+            //catch
+            //{
+
+            //    MessageBox.Show("Kayıt Bulunamadı");
+            //}
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -101,7 +107,7 @@ namespace garantiTakip
                 if (deger)
                 {
                     RbAktif.Checked = true;
-                   
+
                 }
                 else
                 {
@@ -121,7 +127,7 @@ namespace garantiTakip
             if (e.KeyCode == Keys.Enter)
             {
 
-                dataGridView1.DataSource = db.tbl_cari.Where(r => r.FIRMAADI.Contains(textBox3.Text)  || r.ADI.Contains(textBox3.Text)).Select(x => new
+                dataGridView1.DataSource = db.tbl_cari.Where(r => r.FIRMAADI.Contains(textBox3.Text) || r.ADI.Contains(textBox3.Text)).Select(x => new
                 {
                     x.IND,
                     x.FIRMAKODU,
@@ -152,7 +158,7 @@ namespace garantiTakip
                     x.tbl_hizmetturu.HIZMETTURU,
                     x.tbl_baslangicBitisTarih.BASLANGICTARİH,
                     x.tbl_baslangicBitisTarih.BİTİSTARİH
-                }).ToList(); 
+                }).ToList();
             }
         }
     }

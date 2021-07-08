@@ -12,8 +12,10 @@ namespace garantiTakip
 {
     public partial class GarantiDurumFrm : Form
     {
+        
         public GarantiDurumFrm()
         {
+           
             InitializeComponent();
         }
         stajyerEntities3 db = new stajyerEntities3();
@@ -26,33 +28,25 @@ namespace garantiTakip
 
             dataGridView1.DataSource = datacari;
 
+            foreach (var hizmetturu in db.tbl_hizmetturu)
+            {
+                comboHizmetler.Items.Add(hizmetturu.HIZMETTURU);
+            }
+
         }
       
 
         private void btnGarantiBaslat_Click(object sender, EventArgs e)
         {
-           //    if (btnGarantiBaslat.Text == "Garantiyi/Hizmeti Başlat")
-           // {
+           
                 
                 GarantiBaşlatForm frm = new GarantiBaşlatForm(this);
             
                frm.Show();
-           // }
-           //else if (btnGarantiBaslat.Text == "Garantiyi/Hizmeti Yeniden Başlat")
-           // {
-                
-           //     btnGarantiBaslat.Text = "Garantiyi/Hizmeti Yeniden Başlat";
-           //     GarantiBaşlatForm frm = new GarantiBaşlatForm(this);
-           //     frm.Show();
-
-
-           // }
+        
 
         }
-        //public string butonKontrol2()
-        //{
-        //    return label6.Text;
-        //}
+      
       
         public string GarantiYenidenBaslat()
         {
@@ -78,7 +72,7 @@ namespace garantiTakip
                     String sonuc = fark.TotalDays.ToString();
                     basladimi = (bugunTarih -Convert.ToDateTime(baslangıc));
                     int buFark = Convert.ToInt32(sonuc);
-                    if (basladimi.TotalDays>0)
+                    if (basladimi.TotalDays>=0)
                     {
                         if (buFark < 10 && buFark > 0)
                         {
@@ -140,7 +134,7 @@ namespace garantiTakip
 
 
                 txtFirmaAd.Text = tblcari.FIRMAADI;
-                txtHizmet.Text = (tblcari.tbl_hizmetturu == null) ? "" : tblcari.tbl_hizmetturu.HIZMETTURU;
+                comboHizmetler.Text = (tblcari.tbl_hizmetturu == null) ? "" : tblcari.tbl_hizmetturu.HIZMETTURU;
                 txtKontrol.Text = tblcari.IND.ToString();
                 txtBasbitTutucu.Text = basbitTutucu.ToString();
 
@@ -223,21 +217,30 @@ namespace garantiTakip
         }
 
 
-        public int Getir2()
+        public int Getir2() //carinin id sini getiriyor seçilenin
         {
             int id;
             id = Convert.ToInt32(txtKontrol.Text);
             return id;
         }
 
-        public int Getir4()
+        public int Getir4()// baslangıc bitiş tarihlerini güncellemek için basbit id sini getiriyor
         {
             int id;
             id = Convert.ToInt32(txtBasbitTutucu.Text);
             return id;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PersonelGönderForm frm = new PersonelGönderForm(this);
+            frm.Show();
+        }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PersonelDurumForm frm = new PersonelDurumForm(this);
+            frm.Show();
+        }
     }
 }

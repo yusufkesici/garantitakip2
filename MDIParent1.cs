@@ -55,7 +55,7 @@ namespace garantiTakip
             
         }
 
-        private void garantiVeHizmetToolStripMenuItem_Click(object sender, EventArgs e)
+        public void garantiVeHizmetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GarantiDurumFrm childForm = new GarantiDurumFrm();
             childForm.MdiParent = this;
@@ -65,13 +65,13 @@ namespace garantiTakip
 
         }
 
-        private void MDIParent1_Load(object sender, EventArgs e)
+        public void MDIParent1_Load(object sender, EventArgs e)
         {
             GarantiDurumFrm form2 = new GarantiDurumFrm();
            
             if (form2.Getir3().Count!=0) 
             {
-                GarantiRaporForm form = new GarantiRaporForm();
+                GarantiRaporForm form = new GarantiRaporForm(this);
                 form.Show();
             }
             AnasayfaFrm childForm = new AnasayfaFrm();
@@ -158,6 +158,11 @@ namespace garantiTakip
             childForm.WindowState = FormWindowState.Maximized;
             childForm.Text = "Pencere " + childFormNumber++;
             childForm.Show();
+        }
+
+        private void personelDurumlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -44,7 +44,7 @@ namespace garantiTakip
                 x.PARABIRIMI,
                 x.IL,
                 x.tbl_personel.PERSONELAD,
-                x.tbl_personel.tbl_yorum.YORUM,
+                x.tbl_yorum.YORUM,
                 x.PERSONELNO,
                
                 x.tbl_status.STATUS,
@@ -109,6 +109,8 @@ namespace garantiTakip
             int id = Convert.ToInt16(txtSil.Text);
             cari = db.tbl_cari.Find(id);
 
+            tbl_baslangicBitisTarih baslangicBitisTarih = db.tbl_baslangicBitisTarih.Find(cari.BASBITTAR);
+
             if (cari != null)
             {
                 DialogResult dialog = new DialogResult();
@@ -116,6 +118,7 @@ namespace garantiTakip
                 if (dialog == DialogResult.Yes)
                 {
                     db.tbl_cari.Remove(cari);
+                    db.tbl_baslangicBitisTarih.Remove(baslangicBitisTarih);
                     db.SaveChanges();
                     RaporlarForm_Load(sender, e);
                 }

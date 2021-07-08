@@ -155,6 +155,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PersonelDurumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelDurumForm.Designer.cs">
+      <DependentUpon>PersonelDurumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGönderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGönderForm.Designer.cs">
+      <DependentUpon>PersonelGönderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonelListe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +286,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelDurumForm.resx">
+      <DependentUpon>PersonelDurumForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGönderForm.resx">
+      <DependentUpon>PersonelGönderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonelListe.resx">
       <DependentUpon>PersonelListe.cs</DependentUpon>

@@ -31,7 +31,7 @@ namespace garantiTakip
 
         private void GarantiBaşlatForm_Load(object sender, EventArgs e)
         {
-            GarantiDurumFrm garantiDurumFrm = new GarantiDurumFrm();
+            
 
 
             if (Form.btnGarantiBaslat.Text== "Garantiyi/Hizmeti Başlat")

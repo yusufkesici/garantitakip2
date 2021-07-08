@@ -31,6 +31,7 @@ namespace garantiTakip
         {
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -53,9 +54,21 @@ namespace garantiTakip
             this.listBox1.Size = new System.Drawing.Size(650, 178);
             this.listBox1.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.Location = new System.Drawing.Point(262, 292);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 47);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Garanti Sayfasına Git";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GarantiRaporForm
             // 
-            this.ClientSize = new System.Drawing.Size(760, 340);
+            this.ClientSize = new System.Drawing.Size(760, 350);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Name = "GarantiRaporForm";
@@ -71,5 +84,6 @@ namespace garantiTakip
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

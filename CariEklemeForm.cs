@@ -42,6 +42,9 @@ namespace garantiTakip
             hizmetturu = db.tbl_hizmetturu.Where(x => x.HIZMETTURU == comboHizmetturu.Text).FirstOrDefault();
             //YETKİLİ BOŞ GELİRSE DEFAULT DEĞER ATADIK
 
+            tbl_yorum yorum = new tbl_yorum();
+            db.tbl_yorum.Add(yorum);
+
             //bu kısımda yetkilinin bilgilerini aldık eğer girilen bilgilerdeki ad,soyad,telno,veri tabanında bir kişiye sahipse sistem
             //bize mesaj gösterir yetkilinin sisteme kayıtlı olduğuna dair.
 
@@ -108,6 +111,8 @@ namespace garantiTakip
             cari.KAYITTARIHI = DateTime.Now;
             cari.BASBITTAR = baslangicBitisTarih.IND;
             cari.UNVAN = txtUnvan.Text;
+            cari.PERSONELNO = 1;
+            cari.PersonelYorum = yorum.IND;
             
             if (radioAktif.Checked==true) cari.tbl_status=statuss ;
             if (radioPasif.Checked==true) cari.tbl_status=statuss2 ;
