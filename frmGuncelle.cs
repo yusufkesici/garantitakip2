@@ -112,7 +112,7 @@ namespace garantiTakip
             txtBitisTarih.Value = (dataGridView1.CurrentRow.Cells[28].Value == null) ? DateTime.Now.Date : Convert.ToDateTime(dataGridView1.CurrentRow.Cells[28].Value);
             txtYetkiliAd.Text = (dataGridView1.CurrentRow.Cells[9].Value == null) ? "" : (dataGridView1.CurrentRow.Cells[9].Value.ToString());
             txtYetkiliMail.Text = (dataGridView1.CurrentRow.Cells[29].Value == null) ? "" : (dataGridView1.CurrentRow.Cells[29].Value.ToString());
-            txtYetkiliTel.Text = (dataGridView1.CurrentRow.Cells[30].Value == null) ? "" : (dataGridView1.CurrentRow.Cells[30].Value.ToString());
+            txtYetkiliTel2.Text = (dataGridView1.CurrentRow.Cells[30].Value == null) ? "" : (dataGridView1.CurrentRow.Cells[30].Value.ToString());
             txtyetkiliSoyadi.Text = (dataGridView1.CurrentRow.Cells[10].Value == null) ? "" : (dataGridView1.CurrentRow.Cells[10].Value.ToString());
             txtYetkiliDgmTarih.Value = (dataGridView1.CurrentRow.Cells[25].Value == null) ? DateTime.Now.Date : Convert.ToDateTime(dataGridView1.CurrentRow.Cells[25].Value);
             lblind.Text = (dataGridView1.CurrentRow.Cells[0].Value == null) ? "" : (dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -151,7 +151,7 @@ namespace garantiTakip
             if (lblind.Text != null)
             {
 
-                var guncelle = db.tbl_cari.Where(w => w.IND == b).FirstOrDefault();
+                tbl_cari guncelle = db.tbl_cari.Where(w => w.IND == b).FirstOrDefault();
                 tbl_sektor sektor = db.tbl_sektor.Where(x => x.SEKTORADI == comboSektor.Text).FirstOrDefault();
                 tbl_firmaTipi firma = db.tbl_firmaTipi.Where(x => x.FIRMATİPİ == comboFirmatipi.Text).FirstOrDefault();
                 tbl_hizmetturu hizmet = db.tbl_hizmetturu.Where(x => x.HIZMETTURU == comboHizmetturu.Text).FirstOrDefault();
@@ -239,7 +239,7 @@ namespace garantiTakip
 
                 guncelle.tbl_Yetkili.AD = txtYetkiliAd.Text;
                 guncelle.tbl_Yetkili.SOYAD = txtyetkiliSoyadi.Text;
-                guncelle.tbl_Yetkili.TELEFON = txtYetkiliTel.Text;
+                guncelle.tbl_Yetkili.TELEFON = txtYetkiliTel2.Text;
                 guncelle.tbl_Yetkili.MAIL = txtYetkiliMail.Text;
                 guncelle.KAYITTARIHI = DateTime.Parse(txtKayitTarih.Text);
 
@@ -342,17 +342,14 @@ namespace garantiTakip
         }
 
         
-        private void txtFirmaKod_Leave(object sender, EventArgs e)
-        {
-
-
-
-        }
+  
 
         private void button1_Click(object sender, EventArgs e)
         {
             Listele();
         }
+
+       
 
 
         //if (originalText != textBox1.Text)

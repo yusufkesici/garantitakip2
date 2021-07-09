@@ -36,6 +36,11 @@ namespace garantiTakip
             this.txtSil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboFirmaTip = new System.Windows.Forms.ComboBox();
+            this.comboSektor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +57,7 @@ namespace garantiTakip
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(459, 24);
+            this.button1.Location = new System.Drawing.Point(445, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 31);
             this.button1.TabIndex = 1;
@@ -63,7 +68,7 @@ namespace garantiTakip
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightCoral;
-            this.button2.Location = new System.Drawing.Point(1039, 24);
+            this.button2.Location = new System.Drawing.Point(1014, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 31);
             this.button2.TabIndex = 2;
@@ -81,16 +86,15 @@ namespace garantiTakip
             // 
             // txtSil
             // 
-            this.txtSil.Location = new System.Drawing.Point(695, 28);
+            this.txtSil.Location = new System.Drawing.Point(670, 22);
             this.txtSil.Name = "txtSil";
             this.txtSil.Size = new System.Drawing.Size(338, 22);
             this.txtSil.TabIndex = 5;
-//            this.txtSil.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSil_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(654, 31);
+            this.label1.Location = new System.Drawing.Point(629, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 17);
             this.label1.TabIndex = 6;
@@ -105,11 +109,60 @@ namespace garantiTakip
             this.label2.TabIndex = 7;
             this.label2.Text = "Firma Adı:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(23, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 24);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Filtrele";
+            // 
+            // comboFirmaTip
+            // 
+            this.comboFirmaTip.FormattingEnabled = true;
+            this.comboFirmaTip.Location = new System.Drawing.Point(233, 74);
+            this.comboFirmaTip.Name = "comboFirmaTip";
+            this.comboFirmaTip.Size = new System.Drawing.Size(121, 24);
+            this.comboFirmaTip.TabIndex = 9;
+            // 
+            // comboSektor
+            // 
+            this.comboSektor.FormattingEnabled = true;
+            this.comboSektor.Location = new System.Drawing.Point(451, 74);
+            this.comboSektor.Name = "comboSektor";
+            this.comboSektor.Size = new System.Drawing.Size(121, 24);
+            this.comboSektor.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(153, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Firma Tipi:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(392, 77);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Sektör:";
+            // 
             // RaporlarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 560);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboSektor);
+            this.Controls.Add(this.comboFirmaTip);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSil);
@@ -135,5 +188,10 @@ namespace garantiTakip
         private System.Windows.Forms.TextBox txtSil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboFirmaTip;
+        private System.Windows.Forms.ComboBox comboSektor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

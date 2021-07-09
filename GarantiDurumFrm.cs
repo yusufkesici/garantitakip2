@@ -20,19 +20,22 @@ namespace garantiTakip
         }
         stajyerEntities3 db = new stajyerEntities3();
 
-        private void GarantiDurumFrm_Load(object sender, EventArgs e)
+        public void DatagridList()
         {
-            btnGarantiBaslat.Visible = false;
-
             var datacari = db.tbl_cari.Select(a => new { a.IND, a.FIRMAADI, a.tbl_hizmetturu.HIZMETTURU, a.tbl_baslangicBitisTarih.BASLANGICTARİH, a.tbl_baslangicBitisTarih.BİTİSTARİH }).ToList();
 
             dataGridView1.DataSource = datacari;
+       
+        }
+        private void GarantiDurumFrm_Load(object sender, EventArgs e)
+        {
+            btnGarantiBaslat.Visible = false;
+            DatagridList();
 
             foreach (var hizmetturu in db.tbl_hizmetturu)
             {
                 comboHizmetler.Items.Add(hizmetturu.HIZMETTURU);
             }
-
         }
       
 
@@ -241,6 +244,18 @@ namespace garantiTakip
         {
             PersonelDurumForm frm = new PersonelDurumForm(this);
             frm.Show();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               
+
+                var datacari = db.tbl_cari.Where(x=>x.FIRMAADI.Contains(textBox1.Text) || x.tbl_personel.PERSONELAD.Contains(textBox1.Text)).Select(a => new { a.IND, a.FIRMAADI, a.tbl_hizmetturu.HIZMETTURU, a.tbl_baslangicBitisTarih.BASLANGICTARİH, a.tbl_baslangicBitisTarih.BİTİSTARİH }).ToList();
+
+                dataGridView1.DataSource = datacari;
+            }
         }
     }
 }

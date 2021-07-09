@@ -84,7 +84,6 @@ namespace garantiTakip
             this.label23 = new System.Windows.Forms.Label();
             this.txtYetkiliMail = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtYetkiliTel = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtYetkiliAd = new System.Windows.Forms.TextBox();
@@ -96,6 +95,7 @@ namespace garantiTakip
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtYetkiliTel2 = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -341,7 +341,7 @@ namespace garantiTakip
             this.txtFirmaKod.Size = new System.Drawing.Size(191, 28);
             this.txtFirmaKod.TabIndex = 20;
             this.txtFirmaKod.TabIndexChanged += new System.EventHandler(this.txtFirmaKod_TabIndexChanged);
-            this.txtFirmaKod.Leave += new System.EventHandler(this.txtFirmaKod_Leave);
+           
             // 
             // txtKayitTarih
             // 
@@ -552,6 +552,7 @@ namespace garantiTakip
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Gainsboro;
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage3.Controls.Add(this.txtYetkiliTel2);
             this.tabPage3.Controls.Add(this.txtyetkiliSoyadi);
             this.tabPage3.Controls.Add(this.txtYetkiliDgmTarih);
             this.tabPage3.Controls.Add(this.label24);
@@ -560,7 +561,6 @@ namespace garantiTakip
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.txtYetkiliMail);
             this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.txtYetkiliTel);
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Controls.Add(this.label22);
             this.tabPage3.Controls.Add(this.txtYetkiliAd);
@@ -609,6 +609,7 @@ namespace garantiTakip
             this.textUnvan.Name = "textUnvan";
             this.textUnvan.Size = new System.Drawing.Size(236, 28);
             this.textUnvan.TabIndex = 13;
+           
             // 
             // label23
             // 
@@ -634,14 +635,6 @@ namespace garantiTakip
             this.label20.Size = new System.Drawing.Size(65, 21);
             this.label20.TabIndex = 12;
             this.label20.Text = "Telefon:";
-            // 
-            // txtYetkiliTel
-            // 
-            this.txtYetkiliTel.Location = new System.Drawing.Point(115, 140);
-            this.txtYetkiliTel.MaxLength = 11;
-            this.txtYetkiliTel.Name = "txtYetkiliTel";
-            this.txtYetkiliTel.Size = new System.Drawing.Size(236, 28);
-            this.txtYetkiliTel.TabIndex = 11;
             // 
             // label21
             // 
@@ -723,7 +716,7 @@ namespace garantiTakip
             // 
             this.textBox1.Location = new System.Drawing.Point(76, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 28);
+            this.textBox1.Size = new System.Drawing.Size(292, 28);
             this.textBox1.TabIndex = 37;
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
@@ -745,6 +738,14 @@ namespace garantiTakip
             this.button1.Text = "Listele";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtYetkiliTel2
+            // 
+            this.txtYetkiliTel2.Location = new System.Drawing.Point(117, 140);
+            this.txtYetkiliTel2.Mask = "(999) 000-0000";
+            this.txtYetkiliTel2.Name = "txtYetkiliTel2";
+            this.txtYetkiliTel2.Size = new System.Drawing.Size(234, 28);
+            this.txtYetkiliTel2.TabIndex = 21;
             // 
             // frmGuncelle
             // 
@@ -814,7 +815,6 @@ namespace garantiTakip
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtYetkiliMail;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtYetkiliTel;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtYetkiliAd;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -848,5 +848,6 @@ namespace garantiTakip
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox txtYetkiliTel2;
     }
 }

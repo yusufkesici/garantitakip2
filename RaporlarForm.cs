@@ -22,36 +22,23 @@ namespace garantiTakip
         {
             dataGridView1.DataSource = db.tbl_cari.Select(x => new
             {
-                x.IND,
-                x.FIRMAKODU,
+                x.IND,                
                 x.FIRMAADI,
-                x.YETKILI,
-                x.VERGIDAIRESI,
                 x.VERGINO,
-                x.KAYITTARIHI,
-                x.ISKONTO,
                 x.tbl_firmaTipi.FIRMATİPİ,
-                x.tbl_Yetkili.AD,
-                x.tbl_Yetkili.SOYAD,
-                x.UNVAN,
                 x.tbl_sektor.SEKTORADI,
-                x.EMAIL,
-                x.URL,
-                x.TELEFON1,
-                x.TELEFON2,
-                x.ADRESFATURA,
-                x.ADRESSEVK,
-                x.PARABIRIMI,
-                x.IL,
-                x.tbl_personel.PERSONELAD,
-                x.tbl_yorum.YORUM,
-                x.PERSONELNO,
-               
-                x.tbl_status.STATUS,
-
                 x.tbl_hizmetturu.HIZMETTURU,
-                x.tbl_baslangicBitisTarih.BASLANGICTARİH,
-                x.tbl_baslangicBitisTarih.BİTİSTARİH
+                x.TELEFON1,
+                x.EMAIL,
+                x.IL,
+                x.tbl_Yetkili.AD,
+                x.tbl_Yetkili.SOYAD,            
+                x.tbl_personel.PERSONELAD,
+                x.tbl_personel.PERSONELSOYAD,
+            
+                x.tbl_status.STATUS,
+                x.KAYITTARIHI,
+
             }).ToList();
 
         }
@@ -91,7 +78,14 @@ namespace garantiTakip
         }
         private void RaporlarForm_Load(object sender, EventArgs e)
         {
-
+            foreach (tbl_sektor sektor in db.tbl_sektor)
+            {
+                comboSektor.Items.Add(sektor.SEKTORADI);
+            }
+            foreach (tbl_firmaTipi firmaTipi in db.tbl_firmaTipi)
+            {
+                comboFirmaTip.Items.Add(firmaTipi.FIRMATİPİ);
+            }
 
             Listele();
 

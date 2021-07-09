@@ -18,8 +18,6 @@ namespace garantiTakip
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MDIParent1());
 
-
-
         }
     }
 }

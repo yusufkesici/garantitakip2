@@ -126,6 +126,7 @@ namespace garantiTakip
             // 
             // combopersoneller2
             // 
+            this.combopersoneller2.Enabled = false;
             this.combopersoneller2.FormattingEnabled = true;
             this.combopersoneller2.Location = new System.Drawing.Point(172, 42);
             this.combopersoneller2.Name = "combopersoneller2";

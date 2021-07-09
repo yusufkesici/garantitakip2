@@ -19,7 +19,7 @@ namespace garantiTakip
 
         bool kontrol;
         bool hkontrol;
-        bool mkontrol;
+        bool mckontrol;
         bool ckontrol;
 
         stajyerEntities3 baglanti = new stajyerEntities3();
@@ -48,7 +48,7 @@ namespace garantiTakip
         private void button3_Click(object sender, EventArgs e)
         {
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.DataSource = baglanti.tbl_marka.Select(x => new {x.IND,x.FIRMANO,x.MARKAADI }).ToList();
+            dataGridView1.DataSource = baglanti.tbl_cari.Select(x => new {x.FIRMAADI,x.tbl_personel.PERSONELAD,x.tbl_personel.PERSONELSOYAD,x.tbl_yorum.YORUM }).ToList();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -123,11 +123,11 @@ namespace garantiTakip
                 }
             }
 
-            if (mkontrol == true)
+            if (mckontrol == true)
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    dataGridView1.DataSource = baglanti.tbl_marka.Where(r => r.MARKAADI.Contains(textBox1.Text)).Select(x => new { x.IND, x.FIRMANO, x.MARKAADI }).ToList();
+                    dataGridView1.DataSource = baglanti.tbl_cari.Where(r => r.tbl_personel.PERSONELAD.Contains(textBox1.Text)).Select(x => new { x.FIRMAADI, x.tbl_personel.PERSONELAD, x.tbl_personel.PERSONELSOYAD, x.tbl_yorum.YORUM }).ToList();
                 }
             }
 
@@ -191,21 +191,21 @@ namespace garantiTakip
         {
             kontrol = true;
             hkontrol = false;
-            mkontrol = false;
+            mckontrol = false;
             ckontrol = false;
         }
 
         private void button2_Enter(object sender, EventArgs e)
         {
             hkontrol = true;
-            mkontrol = false;
+            mckontrol = false;
             ckontrol = false;
             kontrol = false;
         }
 
         private void button3_Enter(object sender, EventArgs e)
         {
-            mkontrol = true;
+            mckontrol = true;
             ckontrol = false;
             kontrol = false;
             hkontrol = false;
@@ -216,7 +216,7 @@ namespace garantiTakip
             ckontrol = true;
             hkontrol = false;
             kontrol = false;
-            mkontrol = false;
+            mckontrol = false;
         }
     }
 }

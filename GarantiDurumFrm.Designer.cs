@@ -48,16 +48,18 @@ namespace garantiTakip
             this.button1 = new System.Windows.Forms.Button();
             this.comboHizmetler = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(445, 9);
+            this.label1.Font = new System.Drawing.Font("Corbel", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(467, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 41);
+            this.label1.Size = new System.Drawing.Size(242, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Garanti Durum Kontrol";
             // 
@@ -78,7 +80,7 @@ namespace garantiTakip
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 136);
+            this.label2.Location = new System.Drawing.Point(11, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 21);
             this.label2.TabIndex = 3;
@@ -86,14 +88,16 @@ namespace garantiTakip
             // 
             // txtBas
             // 
-            this.txtBas.Location = new System.Drawing.Point(193, 130);
+            this.txtBas.Enabled = false;
+            this.txtBas.Location = new System.Drawing.Point(193, 117);
             this.txtBas.Name = "txtBas";
             this.txtBas.Size = new System.Drawing.Size(241, 28);
             this.txtBas.TabIndex = 4;
             // 
             // txtBit
             // 
-            this.txtBit.Location = new System.Drawing.Point(193, 164);
+            this.txtBit.Enabled = false;
+            this.txtBit.Location = new System.Drawing.Point(193, 151);
             this.txtBit.Name = "txtBit";
             this.txtBit.Size = new System.Drawing.Size(241, 28);
             this.txtBit.TabIndex = 6;
@@ -102,7 +106,7 @@ namespace garantiTakip
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 170);
+            this.label3.Location = new System.Drawing.Point(46, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 21);
             this.label3.TabIndex = 5;
@@ -111,7 +115,7 @@ namespace garantiTakip
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(106, 65);
+            this.label4.Location = new System.Drawing.Point(106, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 21);
             this.label4.TabIndex = 7;
@@ -119,7 +123,8 @@ namespace garantiTakip
             // 
             // txtFirmaAd
             // 
-            this.txtFirmaAd.Location = new System.Drawing.Point(193, 62);
+            this.txtFirmaAd.Enabled = false;
+            this.txtFirmaAd.Location = new System.Drawing.Point(193, 49);
             this.txtFirmaAd.Name = "txtFirmaAd";
             this.txtFirmaAd.Size = new System.Drawing.Size(241, 28);
             this.txtFirmaAd.TabIndex = 8;
@@ -127,7 +132,7 @@ namespace garantiTakip
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(78, 99);
+            this.label5.Location = new System.Drawing.Point(78, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 21);
             this.label5.TabIndex = 9;
@@ -145,18 +150,18 @@ namespace garantiTakip
             // 
             // btnGarantiBaslat
             // 
-            this.btnGarantiBaslat.Location = new System.Drawing.Point(440, 130);
+            this.btnGarantiBaslat.Location = new System.Drawing.Point(440, 117);
             this.btnGarantiBaslat.Name = "btnGarantiBaslat";
             this.btnGarantiBaslat.Size = new System.Drawing.Size(279, 36);
             this.btnGarantiBaslat.TabIndex = 13;
-            this.btnGarantiBaslat.Text = "başlatma";
+            this.btnGarantiBaslat.Text = "garanti başlatma";
             this.btnGarantiBaslat.UseVisualStyleBackColor = true;
             this.btnGarantiBaslat.Click += new System.EventHandler(this.btnGarantiBaslat_Click);
             // 
             // txtFark
             // 
             this.txtFark.AutoSize = true;
-            this.txtFark.Location = new System.Drawing.Point(225, 200);
+            this.txtFark.Location = new System.Drawing.Point(225, 187);
             this.txtFark.Name = "txtFark";
             this.txtFark.Size = new System.Drawing.Size(52, 21);
             this.txtFark.TabIndex = 14;
@@ -201,37 +206,57 @@ namespace garantiTakip
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(441, 69);
+            this.button1.Location = new System.Drawing.Point(441, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(278, 36);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Personel Gönder";
+            this.button1.Text = " Seçilen Firmaya Personel Gönder";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboHizmetler
             // 
+            this.comboHizmetler.Enabled = false;
             this.comboHizmetler.FormattingEnabled = true;
-            this.comboHizmetler.Location = new System.Drawing.Point(193, 95);
+            this.comboHizmetler.Location = new System.Drawing.Point(193, 82);
             this.comboHizmetler.Name = "comboHizmetler";
             this.comboHizmetler.Size = new System.Drawing.Size(241, 29);
             this.comboHizmetler.TabIndex = 20;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(734, 69);
+            this.button2.Location = new System.Drawing.Point(734, 56);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(278, 36);
             this.button2.TabIndex = 21;
-            this.button2.Text = "Personel Yorum";
+            this.button2.Text = "İlgili Personelin Yorumları";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(617, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 21);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Ara:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(662, 187);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(546, 28);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // GarantiDurumFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 568);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboHizmetler);
             this.Controls.Add(this.button1);
@@ -283,5 +308,7 @@ namespace garantiTakip
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboHizmetler;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

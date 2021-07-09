@@ -31,11 +31,10 @@ namespace garantiTakip
             
             foreach (var personel in db.tbl_personel)
             {
-                if (personel.PERSONELDURUM == false)
-                {
+               
                     comboPersoneller.Items.Add(personel.PERSONELAD + " " + personel.PERSONELSOYAD);
 
-                }
+                
                 
             }
 
@@ -47,16 +46,27 @@ namespace garantiTakip
             int id = Form.Getir2();
             tbl_cari cari = db.tbl_cari.Find(id);
             tbl_personel personel = db.tbl_personel.Where(x => (x.PERSONELAD + " " + x.PERSONELSOYAD) == comboPersoneller.Text).FirstOrDefault();
-            int a = personel.IND;
+            if (personel != null)
+            {
+                int a = personel.IND;
 
-          //  int personelId = Convert.ToInt16(PersonelId.Text);
-            
+                //  int personelId = Convert.ToInt16(PersonelId.Text);
 
 
 
-            cari.PERSONELNO = personel.IND;
-            db.SaveChanges();
-            MessageBox.Show("Personel " + cari.FIRMAADI + " Adlı Firmaya Atandı");
+
+                cari.PERSONELNO = personel.IND;
+                int CariYorumId = cari.PersonelYorum.Value;
+                tbl_yorum yorum = db.tbl_yorum.Find(CariYorumId);
+                yorum.YORUM = "";
+                db.SaveChanges();
+                this.Close();
+                MessageBox.Show("Personel " + cari.FIRMAADI + " Adlı Firmaya Atandı");
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Seçiniz");
+            }
         }
     }
 }

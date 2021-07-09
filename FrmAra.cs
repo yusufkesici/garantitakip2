@@ -19,39 +19,68 @@ namespace garantiTakip
             InitializeComponent();
             Form = frm;
         }
-       
+
         private void btnAra_Click(object sender, EventArgs e)
         {
-           
-            if (txtFirmaNo.Text !="" )
+            if (txtAraHepsi.Text != "")
             {
-               int firmano = Convert.ToInt32(txtFirmaNo.Text);
+                var girilenArama = txtAraHepsi.Text;
 
-                tbl_cari CCari = db.tbl_cari.Find(firmano);
+                tbl_cari cari = db.tbl_cari.Where(x => x.FIRMAADI == girilenArama || x.tbl_Yetkili.AD + " " + x.tbl_Yetkili.SOYAD == girilenArama).FirstOrDefault();
+                if (cari == null)
+                {
 
+                    try
+                    {
+                        int id = Convert.ToInt32(girilenArama);
+                        cari = db.tbl_cari.Find(id);
 
-                Form.GetirId(CCari, firmano);
+                        Form.GetirCariAra(cari, id);
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Kayıt Bulunamadı","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    }
+                        
+                    
+                }
+                else
+                {
+
+                    Form.GetirCariAra(cari, 0, girilenArama);
+                }
             }
-             if(txtFirmaAdi.Text!="")
-            {
-                String firmaAdi = txtFirmaAdi.Text;
 
-                tbl_cari CCari = db.tbl_cari.Where(x=>x.FIRMAADI==firmaAdi).FirstOrDefault();
+            //if (txtFirmaNo.Text != "")
+            //{
+            //    int firmano = Convert.ToInt32(txtFirmaNo.Text);
 
-
-                Form.GetirFirmaAdi(CCari,firmaAdi);
-            }
-             if (txtYetkiliAdSoyad.Text !="")
-            {
-                String yetkiliAdSoyad = txtYetkiliAdSoyad.Text;
-
-                tbl_cari CCari = db.tbl_cari.Where(x => (x.tbl_Yetkili.AD+" "+x.tbl_Yetkili.SOYAD)==yetkiliAdSoyad).FirstOrDefault();
+            //    tbl_cari CCari = db.tbl_cari.Find(firmano);
 
 
-                Form.GetirlYetkiliAdSoyad(CCari, yetkiliAdSoyad);
-            }
+            //    Form.GetirId(CCari, firmano);
+            //}
+            //if (txtFirmaAdi.Text != "")
+            //{
+            //    String firmaAdi = txtFirmaAdi.Text;
 
-            
+            //    tbl_cari CCari = db.tbl_cari.Where(x => x.FIRMAADI == firmaAdi).FirstOrDefault();
+
+
+            //    Form.GetirFirmaAdi(CCari, firmaAdi);
+            //}
+            //if (txtYetkiliAdSoyad.Text != "")
+            //{
+            //    String yetkiliAdSoyad = txtYetkiliAdSoyad.Text;
+
+            //    tbl_cari CCari = db.tbl_cari.Where(x => (x.tbl_Yetkili.AD + " " + x.tbl_Yetkili.SOYAD) == yetkiliAdSoyad).FirstOrDefault();
+
+
+            //    Form.GetirlYetkiliAdSoyad(CCari, yetkiliAdSoyad);
+            //}
+
+
 
         }
 
@@ -69,32 +98,6 @@ namespace garantiTakip
                 e.Handled = true;
             }
         }
-
-     
-
-        private void FrmAra_Load(object sender, EventArgs e)
-        {
-            txtFirmaAdi.Focus();
-        }
-
-        private void txtFirmaNo_Enter(object sender, EventArgs e)
-        {
-            txtFirmaAdi.Clear();
-            txtYetkiliAdSoyad.Clear();
-        }
-
-        private void txtFirmaAdi_Enter(object sender, EventArgs e)
-        {
-            txtFirmaNo.Clear();
-            txtYetkiliAdSoyad.Clear();
-        }
-
-        private void txtYetkiliAdSoyad_Enter(object sender, EventArgs e)
-        {
-            txtFirmaNo.Clear();
-            txtFirmaAdi.Clear();
-        }
-
 
     }
 }

@@ -40,6 +40,15 @@ namespace garantiTakip
             //////////////////////tbl hizmetTürü
             tbl_hizmetturu hizmetturu = new tbl_hizmetturu();
             hizmetturu = db.tbl_hizmetturu.Where(x => x.HIZMETTURU == comboHizmetturu.Text).FirstOrDefault();
+
+            tbl_personel personel = new tbl_personel();
+            personel = db.tbl_personel.Where(x => x.PERSONELAD == txtPerAd.Text && x.PERSONELSOYAD == txtPersoyad.Text).FirstOrDefault();
+            if (personel == null)
+            {
+                MessageBox.Show("Personel Bulunamadı");
+                return;
+            }
+
             //YETKİLİ BOŞ GELİRSE DEFAULT DEĞER ATADIK
 
             tbl_yorum yorum = new tbl_yorum();
@@ -111,7 +120,7 @@ namespace garantiTakip
             cari.KAYITTARIHI = DateTime.Now;
             cari.BASBITTAR = baslangicBitisTarih.IND;
             cari.UNVAN = txtUnvan.Text;
-            cari.PERSONELNO = 1;
+            cari.PERSONELNO = personel.IND;
             cari.PersonelYorum = yorum.IND;
             
             if (radioAktif.Checked==true) cari.tbl_status=statuss ;
@@ -147,5 +156,27 @@ namespace garantiTakip
                 comboSektor.Items.Add(sektor.SEKTORADI);
             }
         }
+
+        private void txtYetkiliTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+       
+
+        //private void txtYetkiliTel_Click(object sender, EventArgs e)
+        //{
+        //    txtYetkiliTel.SelectionStart = txtYetkiliTel.Text.TrimEnd().Length;
+        //}
     }
 }
