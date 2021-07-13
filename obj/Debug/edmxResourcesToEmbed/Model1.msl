@@ -184,9 +184,33 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="stajyerModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="stajyerModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="tbl_personel">
+      <EntityTypeMapping TypeName="stajyerModel.tbl_personel">
+        <MappingFragment StoreEntitySet="tbl_personel">
+          <ScalarProperty Name="PERSONELDURUM" ColumnName="PERSONELDURUM" />
+          <ScalarProperty Name="PERSONELADRES" ColumnName="PERSONELADRES" />
+          <ScalarProperty Name="PERSONELTEL" ColumnName="PERSONELTEL" />
+          <ScalarProperty Name="PERSONELTC" ColumnName="PERSONELTC" />
+          <ScalarProperty Name="PERSONELMAİL" ColumnName="PERSONELMAİL" />
+          <ScalarProperty Name="PERSONELSOYAD" ColumnName="PERSONELSOYAD" />
+          <ScalarProperty Name="PERSONELAD" ColumnName="PERSONELAD" />
+          <ScalarProperty Name="IND" ColumnName="IND" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_yorum">
+      <EntityTypeMapping TypeName="stajyerModel.tbl_yorum">
+        <MappingFragment StoreEntitySet="tbl_yorum">
+          <ScalarProperty Name="PersonelNo" ColumnName="PersonelNo" />
+          <ScalarProperty Name="YORUM" ColumnName="YORUM" />
+          <ScalarProperty Name="IND" ColumnName="IND" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_cari">
       <EntityTypeMapping TypeName="stajyerModel.tbl_cari">
         <MappingFragment StoreEntitySet="tbl_cari">
+          <ScalarProperty Name="ArizaID" ColumnName="ArizaID" />
           <ScalarProperty Name="PersonelYorum" ColumnName="PersonelYorum" />
           <ScalarProperty Name="BASBITTAR" ColumnName="BASBITTAR" />
           <ScalarProperty Name="HIZMETTURU" ColumnName="HIZMETTURU" />
@@ -224,25 +248,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_personel">
-      <EntityTypeMapping TypeName="stajyerModel.tbl_personel">
-        <MappingFragment StoreEntitySet="tbl_personel">
-          <ScalarProperty Name="PERSONELDURUM" ColumnName="PERSONELDURUM" />
-          <ScalarProperty Name="PERSONELADRES" ColumnName="PERSONELADRES" />
-          <ScalarProperty Name="PERSONELTEL" ColumnName="PERSONELTEL" />
-          <ScalarProperty Name="PERSONELTC" ColumnName="PERSONELTC" />
-          <ScalarProperty Name="PERSONELMAİL" ColumnName="PERSONELMAİL" />
-          <ScalarProperty Name="PERSONELSOYAD" ColumnName="PERSONELSOYAD" />
-          <ScalarProperty Name="PERSONELAD" ColumnName="PERSONELAD" />
-          <ScalarProperty Name="IND" ColumnName="IND" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tbl_yorum">
-      <EntityTypeMapping TypeName="stajyerModel.tbl_yorum">
-        <MappingFragment StoreEntitySet="tbl_yorum">
-          <ScalarProperty Name="PersonelNo" ColumnName="PersonelNo" />
-          <ScalarProperty Name="YORUM" ColumnName="YORUM" />
+    <EntitySetMapping Name="tbl_Ariza">
+      <EntityTypeMapping TypeName="stajyerModel.tbl_Ariza">
+        <MappingFragment StoreEntitySet="tbl_Ariza">
+          <ScalarProperty Name="MusteriTuru" ColumnName="MusteriTuru" />
+          <ScalarProperty Name="IstenilenServisTarihi" ColumnName="IstenilenServisTarihi" />
+          <ScalarProperty Name="UrunTuru" ColumnName="UrunTuru" />
+          <ScalarProperty Name="OnarimSüresi" ColumnName="OnarimSüresi" />
+          <ScalarProperty Name="ArizaTür" ColumnName="ArizaTür" />
+          <ScalarProperty Name="MusteriAdres" ColumnName="MusteriAdres" />
+          <ScalarProperty Name="MusteriTelefon" ColumnName="MusteriTelefon" />
+          <ScalarProperty Name="MusteriAldigiHizmet" ColumnName="MusteriAldigiHizmet" />
+          <ScalarProperty Name="MusteriAktifMi" ColumnName="MusteriAktifMi" />
+          <ScalarProperty Name="PersonelYorumu" ColumnName="PersonelYorumu" />
+          <ScalarProperty Name="MusteriYorumu" ColumnName="MusteriYorumu" />
+          <ScalarProperty Name="ArizaKayitTarih" ColumnName="ArizaKayitTarih" />
+          <ScalarProperty Name="MusteriKayitTarih" ColumnName="MusteriKayitTarih" />
+          <ScalarProperty Name="EnSonGidilenServisTarih" ColumnName="EnSonGidilenServisTarih" />
+          <ScalarProperty Name="ArizaKaynagi" ColumnName="ArizaKaynagi" />
+          <ScalarProperty Name="GidilenServisSayisi" ColumnName="GidilenServisSayisi" />
+          <ScalarProperty Name="MusteriSoyad" ColumnName="MusteriSoyad" />
+          <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+          <ScalarProperty Name="ArızaTanim" ColumnName="ArızaTanim" />
+          <ScalarProperty Name="CariID" ColumnName="CariID" />
           <ScalarProperty Name="IND" ColumnName="IND" />
         </MappingFragment>
       </EntityTypeMapping>

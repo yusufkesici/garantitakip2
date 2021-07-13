@@ -76,3 +76,5 @@ C:\Users\yusuf\OneDrive\Masaüstü\garantitakip2\obj\Debug\garantiTakip.frmListe
 C:\Users\yusuf\OneDrive\Masaüstü\garantitakip2\obj\Debug\garantiTakip.frmSil.resources
 C:\Users\yusuf\OneDrive\Masaüstü\garantitakip2\obj\Debug\garantiTakip.PersonelGönderForm.resources
 C:\Users\yusuf\OneDrive\Masaüstü\garantitakip2\obj\Debug\garantiTakip.PersonelDurumForm.resources
+C:\Users\yusuf\OneDrive\Masaüstü\garantitakip2\obj\Debug\garantiTakip.TümArızaKayıtları.resources
+C:\Users\yusuf\OneDrive\Masaüstü\garantitakip2\obj\Debug\garantiTakip.ArızaEkle.resources

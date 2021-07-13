@@ -271,7 +271,7 @@ namespace garantiTakip
                     RbPasif.Checked = false;
                 }
 
-
+                CariINDD.Text = cari.IND.ToString();
                 txtSehir.Text = cari.SEHIR;
                 txtTel.Text = cari.TELEFON1;
                 txtTel2.Text = cari.TELEFON2;
@@ -298,11 +298,26 @@ namespace garantiTakip
                 txtPerTel.Text = cari.tbl_personel.PERSONELTEL;
                 txtPerEmail.Text = cari.tbl_personel.PERSONELMAİL;
                 txtPerAdres.Text = cari.tbl_personel.PERSONELADRES;
+                txtArızaTuru.Text = cari.tbl_Ariza.ArizaTür;
+                txtAldıgı.Text = cari.tbl_Ariza.MusteriAldigiHizmet;
+                txtOnarimSuresi.Text = cari.tbl_Ariza.OnarimSüresi;
+                txtArizaTanim.Text = cari.tbl_Ariza.ArızaTanim;
+                txtGidilenServis.Text = db.tbl_Ariza.Where(x => x.CariID == cari.IND).Count().ToString();
+                txtUrunTuru.Text = cari.tbl_Ariza.UrunTuru;
+                //tbl_Ariza ariza = db.tbl_Ariza.Where(x => x.CariID == cari.IND).FirstOrDefault();
+                //arizaKayıt.Text = ariza.ArizaKayitTarih.ToString();
+
             }
             else
             {
                 MessageBox.Show("Kayıt Bulunamadı", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TümArızaKayıtları frm = new TümArızaKayıtları(this);
+            frm.Show();
         }
     }
 }

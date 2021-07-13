@@ -72,6 +72,7 @@ namespace garantiTakip
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Name = "GarantiRaporForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.GarantiRaporForm_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

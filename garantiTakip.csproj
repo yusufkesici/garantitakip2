@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +62,12 @@
     </Compile>
     <Compile Include="AnasayfaFrm.Designer.cs">
       <DependentUpon>AnasayfaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArızaEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArızaEkle.Designer.cs">
+      <DependentUpon>ArızaEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="CariEklemeForm.cs">
       <SubType>Form</SubType>
@@ -209,6 +216,9 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_Ariza.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_baslangicBitisTarih.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -242,11 +252,20 @@
     <Compile Include="tbl_yorum.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TümArızaKayıtları.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TümArızaKayıtları.Designer.cs">
+      <DependentUpon>TümArızaKayıtları.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewCari.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AnasayfaFrm.resx">
       <DependentUpon>AnasayfaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArızaEkle.resx">
+      <DependentUpon>ArızaEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CariEklemeForm.resx">
       <DependentUpon>CariEklemeForm.cs</DependentUpon>
@@ -317,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SifrelemeDeneme.resx">
       <DependentUpon>SifrelemeDeneme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TümArızaKayıtları.resx">
+      <DependentUpon>TümArızaKayıtları.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

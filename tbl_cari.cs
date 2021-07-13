@@ -54,6 +54,7 @@ namespace garantiTakip
         public Nullable<int> HIZMETTURU { get; set; }
         public Nullable<int> BASBITTAR { get; set; }
         public Nullable<int> PersonelYorum { get; set; }
+        public Nullable<int> ArizaID { get; set; }
     
         public virtual tbl_baslangicBitisTarih tbl_baslangicBitisTarih { get; set; }
         public virtual tbl_firmaTipi tbl_firmaTipi { get; set; }
@@ -65,5 +66,6 @@ namespace garantiTakip
         public virtual tbl_yorum tbl_yorum { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_marka> tbl_marka { get; set; }
+        public virtual tbl_Ariza tbl_Ariza { get; set; }
     }
 }

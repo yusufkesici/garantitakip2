@@ -143,17 +143,21 @@ namespace garantiTakip
 
         private void CariEklemeForm_Load(object sender, EventArgs e)
         {
-            foreach (var firmaTipi in db.tbl_firmaTipi)
+            foreach (tbl_firmaTipi firmaTipi in db.tbl_firmaTipi)
             {
                 comboFirmaTip.Items.Add(firmaTipi.FIRMATİPİ);
             }
-            foreach (var hizmetturu in db.tbl_hizmetturu)
+            foreach (tbl_hizmetturu hizmetturu in db.tbl_hizmetturu)
             {
                 comboHizmetturu.Items.Add(hizmetturu.HIZMETTURU);
             }
-            foreach (var sektor in db.tbl_sektor)
+            foreach (tbl_sektor sektor in db.tbl_sektor)
             {
                 comboSektor.Items.Add(sektor.SEKTORADI);
+            }
+            foreach (tbl_personel personel in db.tbl_personel)
+            {
+                comboPersonel.Items.Add(personel.PERSONELAD+" "+personel.PERSONELSOYAD);
             }
         }
 
@@ -172,7 +176,19 @@ namespace garantiTakip
             }
         }
 
-       
+        private void comboPersonel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbl_personel personel = db.tbl_personel.Where(x => x.PERSONELAD + " " + x.PERSONELSOYAD == comboPersonel.Text).FirstOrDefault();
+
+            txtPerAd.Text = personel.PERSONELAD;
+            txtPersoyad.Text = personel.PERSONELSOYAD;
+            txtPerEmail.Text = personel.PERSONELMAİL;
+            txtPerTc.Text = personel.PERSONELTEL;
+            txtPerTel.Text = personel.PERSONELTEL;
+            txtPerAdres.Text = personel.PERSONELADRES;
+        }
+
+
 
         //private void txtYetkiliTel_Click(object sender, EventArgs e)
         //{

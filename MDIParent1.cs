@@ -72,6 +72,7 @@ namespace garantiTakip
             if (form2.Getir3().Count!=0) 
             {
                 GarantiRaporForm form = new GarantiRaporForm(this);
+                form.TopMost = true;
                 form.Show();
             }
             AnasayfaFrm childForm = new AnasayfaFrm();

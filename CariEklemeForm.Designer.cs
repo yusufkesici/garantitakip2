@@ -86,6 +86,22 @@ namespace garantiTakip
             this.txtYetkiliSoyad = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtYetkiliAd = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPerTel = new System.Windows.Forms.MaskedTextBox();
+            this.txtPerEmail = new System.Windows.Forms.TextBox();
+            this.txtPerAdres = new System.Windows.Forms.RichTextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtPerTc = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtPersoyad = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtPerAd = new System.Windows.Forms.TextBox();
+            this.comboPersonel = new System.Windows.Forms.ComboBox();
             this.txtBugunTarih = new System.Windows.Forms.Panel();
             this.comboSektor = new System.Windows.Forms.ComboBox();
             this.comboFirmaTip = new System.Windows.Forms.ComboBox();
@@ -100,25 +116,13 @@ namespace garantiTakip
             this.txtFirmaAdi = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.txtFirmaKodu = new System.Windows.Forms.TextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtPerTel = new System.Windows.Forms.MaskedTextBox();
-            this.txtPerEmail = new System.Windows.Forms.TextBox();
-            this.txtPerAdres = new System.Windows.Forms.RichTextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtPerTc = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.txtPersoyad = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txtPerAd = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.txtBugunTarih.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.txtBugunTarih.SuspendLayout();
             this.SuspendLayout();
             // 
             // RbPasif
@@ -128,13 +132,13 @@ namespace garantiTakip
             this.RbPasif.Name = "RbPasif";
             this.RbPasif.Size = new System.Drawing.Size(65, 25);
             this.RbPasif.TabIndex = 45;
-            this.RbPasif.TabStop = true;
             this.RbPasif.Text = "Pasif";
             this.RbPasif.UseVisualStyleBackColor = true;
             // 
             // RbAktif
             // 
             this.RbAktif.AutoSize = true;
+            this.RbAktif.Checked = true;
             this.RbAktif.Location = new System.Drawing.Point(598, 134);
             this.RbAktif.Name = "RbAktif";
             this.RbAktif.Size = new System.Drawing.Size(65, 25);
@@ -234,6 +238,9 @@ namespace garantiTakip
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -540,7 +547,7 @@ namespace garantiTakip
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1179, 288);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Yetkili Bilgileri";
+            this.tabPage3.Text = "Yetkili /Müşteri Bilgileri";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // txtYetkiliTel
@@ -641,6 +648,153 @@ namespace garantiTakip
             this.txtYetkiliAd.Size = new System.Drawing.Size(236, 28);
             this.txtYetkiliAd.TabIndex = 7;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label38);
+            this.tabPage4.Controls.Add(this.panel1);
+            this.tabPage4.Controls.Add(this.comboPersonel);
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1179, 288);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Personel Bilgileri";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(855, 39);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(101, 21);
+            this.label38.TabIndex = 59;
+            this.label38.Text = "Personel Seç:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtPerTel);
+            this.panel1.Controls.Add(this.txtPerEmail);
+            this.panel1.Controls.Add(this.txtPerAdres);
+            this.panel1.Controls.Add(this.label30);
+            this.panel1.Controls.Add(this.label33);
+            this.panel1.Controls.Add(this.label34);
+            this.panel1.Controls.Add(this.txtPerTc);
+            this.panel1.Controls.Add(this.label35);
+            this.panel1.Controls.Add(this.label36);
+            this.panel1.Controls.Add(this.txtPersoyad);
+            this.panel1.Controls.Add(this.label37);
+            this.panel1.Controls.Add(this.txtPerAd);
+            this.panel1.Location = new System.Drawing.Point(39, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(777, 251);
+            this.panel1.TabIndex = 48;
+            // 
+            // txtPerTel
+            // 
+            this.txtPerTel.Location = new System.Drawing.Point(86, 124);
+            this.txtPerTel.Mask = "(999) 000-0000";
+            this.txtPerTel.Name = "txtPerTel";
+            this.txtPerTel.Size = new System.Drawing.Size(236, 28);
+            this.txtPerTel.TabIndex = 58;
+            // 
+            // txtPerEmail
+            // 
+            this.txtPerEmail.Location = new System.Drawing.Point(466, 24);
+            this.txtPerEmail.Name = "txtPerEmail";
+            this.txtPerEmail.Size = new System.Drawing.Size(233, 28);
+            this.txtPerEmail.TabIndex = 57;
+            // 
+            // txtPerAdres
+            // 
+            this.txtPerAdres.Location = new System.Drawing.Point(463, 74);
+            this.txtPerAdres.Name = "txtPerAdres";
+            this.txtPerAdres.Size = new System.Drawing.Size(236, 133);
+            this.txtPerAdres.TabIndex = 56;
+            this.txtPerAdres.Text = "";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(402, 71);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(55, 21);
+            this.label30.TabIndex = 55;
+            this.label30.Text = "Adres:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(400, 27);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(59, 21);
+            this.label33.TabIndex = 54;
+            this.label33.Text = "E-Mail:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(21, 176);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(33, 21);
+            this.label34.TabIndex = 53;
+            this.label34.Text = "TC:";
+            // 
+            // txtPerTc
+            // 
+            this.txtPerTc.Location = new System.Drawing.Point(86, 169);
+            this.txtPerTc.Name = "txtPerTc";
+            this.txtPerTc.Size = new System.Drawing.Size(236, 28);
+            this.txtPerTc.TabIndex = 52;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(15, 124);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(65, 21);
+            this.label35.TabIndex = 51;
+            this.label35.Text = "Telefon:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(23, 74);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(57, 21);
+            this.label36.TabIndex = 50;
+            this.label36.Text = "Soyad:";
+            // 
+            // txtPersoyad
+            // 
+            this.txtPersoyad.Location = new System.Drawing.Point(86, 74);
+            this.txtPersoyad.Name = "txtPersoyad";
+            this.txtPersoyad.Size = new System.Drawing.Size(236, 28);
+            this.txtPersoyad.TabIndex = 49;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(46, 24);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(34, 21);
+            this.label37.TabIndex = 48;
+            this.label37.Text = "Ad:";
+            // 
+            // txtPerAd
+            // 
+            this.txtPerAd.Location = new System.Drawing.Point(86, 24);
+            this.txtPerAd.Name = "txtPerAd";
+            this.txtPerAd.Size = new System.Drawing.Size(236, 28);
+            this.txtPerAd.TabIndex = 47;
+            // 
+            // comboPersonel
+            // 
+            this.comboPersonel.FormattingEnabled = true;
+            this.comboPersonel.Location = new System.Drawing.Point(962, 36);
+            this.comboPersonel.Name = "comboPersonel";
+            this.comboPersonel.Size = new System.Drawing.Size(176, 29);
+            this.comboPersonel.TabIndex = 47;
+            this.comboPersonel.SelectedIndexChanged += new System.EventHandler(this.comboPersonel_SelectedIndexChanged);
+            // 
             // txtBugunTarih
             // 
             this.txtBugunTarih.BackColor = System.Drawing.Color.OldLace;
@@ -657,6 +811,7 @@ namespace garantiTakip
             this.txtBugunTarih.Controls.Add(this.txtFirmaAdi);
             this.txtBugunTarih.Controls.Add(this.label32);
             this.txtBugunTarih.Controls.Add(this.txtFirmaKodu);
+            this.txtBugunTarih.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.txtBugunTarih.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtBugunTarih.Location = new System.Drawing.Point(0, 0);
             this.txtBugunTarih.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -666,6 +821,7 @@ namespace garantiTakip
             // 
             // comboSektor
             // 
+            this.comboSektor.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboSektor.FormattingEnabled = true;
             this.comboSektor.Location = new System.Drawing.Point(137, 112);
             this.comboSektor.Name = "comboSektor";
@@ -682,6 +838,7 @@ namespace garantiTakip
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Location = new System.Drawing.Point(959, 11);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 28);
@@ -778,125 +935,6 @@ namespace garantiTakip
             this.txtFirmaKodu.Size = new System.Drawing.Size(191, 28);
             this.txtFirmaKodu.TabIndex = 1;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.txtPerTel);
-            this.tabPage4.Controls.Add(this.txtPerEmail);
-            this.tabPage4.Controls.Add(this.txtPerAdres);
-            this.tabPage4.Controls.Add(this.label30);
-            this.tabPage4.Controls.Add(this.label33);
-            this.tabPage4.Controls.Add(this.label34);
-            this.tabPage4.Controls.Add(this.txtPerTc);
-            this.tabPage4.Controls.Add(this.label35);
-            this.tabPage4.Controls.Add(this.label36);
-            this.tabPage4.Controls.Add(this.txtPersoyad);
-            this.tabPage4.Controls.Add(this.label37);
-            this.tabPage4.Controls.Add(this.txtPerAd);
-            this.tabPage4.Location = new System.Drawing.Point(4, 30);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1179, 288);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Personel Bilgileri";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // txtPerTel
-            // 
-            this.txtPerTel.Location = new System.Drawing.Point(121, 129);
-            this.txtPerTel.Mask = "(999) 000-0000";
-            this.txtPerTel.Name = "txtPerTel";
-            this.txtPerTel.Size = new System.Drawing.Size(236, 28);
-            this.txtPerTel.TabIndex = 46;
-            // 
-            // txtPerEmail
-            // 
-            this.txtPerEmail.Location = new System.Drawing.Point(501, 29);
-            this.txtPerEmail.Name = "txtPerEmail";
-            this.txtPerEmail.Size = new System.Drawing.Size(233, 28);
-            this.txtPerEmail.TabIndex = 45;
-            // 
-            // txtPerAdres
-            // 
-            this.txtPerAdres.Location = new System.Drawing.Point(498, 79);
-            this.txtPerAdres.Name = "txtPerAdres";
-            this.txtPerAdres.Size = new System.Drawing.Size(236, 133);
-            this.txtPerAdres.TabIndex = 44;
-            this.txtPerAdres.Text = "";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(437, 76);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(55, 21);
-            this.label30.TabIndex = 43;
-            this.label30.Text = "Adres:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(435, 32);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(59, 21);
-            this.label33.TabIndex = 42;
-            this.label33.Text = "E-Mail:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(56, 181);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(33, 21);
-            this.label34.TabIndex = 41;
-            this.label34.Text = "TC:";
-            // 
-            // txtPerTc
-            // 
-            this.txtPerTc.Location = new System.Drawing.Point(121, 174);
-            this.txtPerTc.Name = "txtPerTc";
-            this.txtPerTc.Size = new System.Drawing.Size(236, 28);
-            this.txtPerTc.TabIndex = 40;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(50, 129);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(65, 21);
-            this.label35.TabIndex = 39;
-            this.label35.Text = "Telefon:";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(58, 79);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(57, 21);
-            this.label36.TabIndex = 38;
-            this.label36.Text = "Soyad:";
-            // 
-            // txtPersoyad
-            // 
-            this.txtPersoyad.Location = new System.Drawing.Point(121, 79);
-            this.txtPersoyad.Name = "txtPersoyad";
-            this.txtPersoyad.Size = new System.Drawing.Size(236, 28);
-            this.txtPersoyad.TabIndex = 37;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(81, 29);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(34, 21);
-            this.label37.TabIndex = 36;
-            this.label37.Text = "Ad:";
-            // 
-            // txtPerAd
-            // 
-            this.txtPerAd.Location = new System.Drawing.Point(121, 29);
-            this.txtPerAd.Name = "txtPerAd";
-            this.txtPerAd.Size = new System.Drawing.Size(236, 28);
-            this.txtPerAd.TabIndex = 35;
-            // 
             // CariEklemeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -929,10 +967,12 @@ namespace garantiTakip
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.txtBugunTarih.ResumeLayout(false);
-            this.txtBugunTarih.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.txtBugunTarih.ResumeLayout(false);
+            this.txtBugunTarih.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1012,6 +1052,7 @@ namespace garantiTakip
         private System.Windows.Forms.TextBox txtUnvan;
         private System.Windows.Forms.MaskedTextBox txtYetkiliTel;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox txtPerTel;
         private System.Windows.Forms.TextBox txtPerEmail;
         private System.Windows.Forms.RichTextBox txtPerAdres;
@@ -1024,5 +1065,7 @@ namespace garantiTakip
         private System.Windows.Forms.TextBox txtPersoyad;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtPerAd;
+        private System.Windows.Forms.ComboBox comboPersonel;
+        private System.Windows.Forms.Label label38;
     }
 }

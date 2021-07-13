@@ -22,7 +22,7 @@ namespace garantiTakip
         {
             dataGridView1.DataSource = db.tbl_cari.Select(x => new
             {
-                x.IND,                
+                x.IND,
                 x.FIRMAADI,
                 x.VERGINO,
                 x.tbl_firmaTipi.FIRMATİPİ,
@@ -32,10 +32,10 @@ namespace garantiTakip
                 x.EMAIL,
                 x.IL,
                 x.tbl_Yetkili.AD,
-                x.tbl_Yetkili.SOYAD,            
+                x.tbl_Yetkili.SOYAD,
                 x.tbl_personel.PERSONELAD,
                 x.tbl_personel.PERSONELSOYAD,
-            
+
                 x.tbl_status.STATUS,
                 x.KAYITTARIHI,
 
@@ -86,6 +86,10 @@ namespace garantiTakip
             {
                 comboFirmaTip.Items.Add(firmaTipi.FIRMATİPİ);
             }
+            foreach (tbl_status status in db.tbl_status)
+            {
+                comboDurum.Items.Add(status.STATUS);
+            }
 
             Listele();
 
@@ -134,6 +138,177 @@ namespace garantiTakip
             }
         }
 
-       
+        #region Filtreleme
+        public void FiltreFirmaTip()
+        {
+            string ad = comboFirmaTip.Text;
+
+            dataGridView1.DataSource = db.tbl_cari.Select(x => new
+            {
+                x.IND,
+                x.FIRMAKODU,
+                x.FIRMAADI,
+                x.YETKILI,
+                x.VERGIDAIRESI,
+                x.VERGINO,
+                x.KAYITTARIHI,
+                x.ISKONTO,
+                x.tbl_firmaTipi.FIRMATİPİ,
+                x.tbl_Yetkili.AD,
+                x.tbl_Yetkili.SOYAD,
+                x.UNVAN,
+                x.tbl_sektor.SEKTORADI,
+                x.EMAIL,
+                x.URL,
+                x.TELEFON1,
+                x.TELEFON2,
+                x.ADRESFATURA,
+                x.ADRESSEVK,
+                x.PARABIRIMI,
+                x.IL,
+                x.PERSONELNO,
+                x.tbl_status.STATUS,
+                x.tbl_hizmetturu.HIZMETTURU,
+                x.tbl_baslangicBitisTarih.BASLANGICTARİH,
+                x.tbl_baslangicBitisTarih.BİTİSTARİH
+            }).Where(x => x.FIRMATİPİ.Contains(ad)).ToList();
+        }
+        public void FiltreSektor()
+        {
+            string ad = comboSektor.Text;
+
+            dataGridView1.DataSource = db.tbl_cari.Select(x => new
+            {
+                x.IND,
+                x.FIRMAKODU,
+                x.FIRMAADI,
+                x.YETKILI,
+                x.VERGIDAIRESI,
+                x.VERGINO,
+                x.KAYITTARIHI,
+                x.ISKONTO,
+                x.tbl_firmaTipi.FIRMATİPİ,
+                x.tbl_Yetkili.AD,
+                x.tbl_Yetkili.SOYAD,
+                x.UNVAN,
+                x.tbl_sektor.SEKTORADI,
+                x.EMAIL,
+                x.URL,
+                x.TELEFON1,
+                x.TELEFON2,
+                x.ADRESFATURA,
+                x.ADRESSEVK,
+                x.PARABIRIMI,
+                x.IL,
+                x.PERSONELNO,
+                x.tbl_status.STATUS,
+                x.tbl_hizmetturu.HIZMETTURU,
+                x.tbl_baslangicBitisTarih.BASLANGICTARİH,
+                x.tbl_baslangicBitisTarih.BİTİSTARİH
+            }).Where(x => x.SEKTORADI.Contains(ad)).ToList();
+        }
+        public void FiltreTipSektor()
+        {
+            string sektor = comboSektor.Text;
+            string firmatip = comboFirmaTip.Text;
+
+            dataGridView1.DataSource = db.tbl_cari.Select(x => new
+            {
+                x.IND,
+                x.FIRMAKODU,
+                x.FIRMAADI,
+                x.YETKILI,
+                x.VERGIDAIRESI,
+                x.VERGINO,
+                x.KAYITTARIHI,
+                x.ISKONTO,
+                x.tbl_firmaTipi.FIRMATİPİ,
+                x.tbl_Yetkili.AD,
+                x.tbl_Yetkili.SOYAD,
+                x.UNVAN,
+                x.tbl_sektor.SEKTORADI,
+                x.EMAIL,
+                x.URL,
+                x.TELEFON1,
+                x.TELEFON2,
+                x.ADRESFATURA,
+                x.ADRESSEVK,
+                x.PARABIRIMI,
+                x.IL,
+                x.PERSONELNO,
+                x.tbl_status.STATUS,
+                x.tbl_hizmetturu.HIZMETTURU,
+                x.tbl_baslangicBitisTarih.BASLANGICTARİH,
+                x.tbl_baslangicBitisTarih.BİTİSTARİH
+            }).Where(x => x.SEKTORADI.Contains(sektor)&&x.FIRMATİPİ.Contains(firmatip)).ToList();
+        }
+        private void comboFirmaTip_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboSektor.Text == "")
+            {
+                FiltreFirmaTip();
+            }
+            else
+            {
+                FiltreTipSektor();
+            }
+           
+        }
+
+        private void comboSektor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboFirmaTip.Text == "")
+            {
+                FiltreSektor();
+
+            }
+            else
+            {
+
+                FiltreTipSektor();
+            }
+
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool ad = Convert.ToBoolean(comboDurum.Text);
+
+            dataGridView1.DataSource = db.tbl_cari.Select(x => new
+            {
+                x.IND,
+                x.FIRMAKODU,
+                x.FIRMAADI,
+                x.YETKILI,
+                x.VERGIDAIRESI,
+                x.VERGINO,
+                x.KAYITTARIHI,
+                x.ISKONTO,
+                x.tbl_firmaTipi.FIRMATİPİ,
+                x.tbl_Yetkili.AD,
+                x.tbl_Yetkili.SOYAD,
+                x.UNVAN,
+                x.tbl_sektor.SEKTORADI,
+                x.EMAIL,
+                x.URL,
+                x.TELEFON1,
+                x.TELEFON2,
+                x.ADRESFATURA,
+                x.ADRESSEVK,
+                x.PARABIRIMI,
+                x.IL,
+                x.PERSONELNO,
+                x.tbl_status.STATUS,
+                x.tbl_hizmetturu.HIZMETTURU,
+                x.tbl_baslangicBitisTarih.BASLANGICTARİH,
+                x.tbl_baslangicBitisTarih.BİTİSTARİH
+            }).Where(x => x.STATUS == ad).ToList();
+        }
+
+        #endregion
+
+
     }
 }
+
+
+

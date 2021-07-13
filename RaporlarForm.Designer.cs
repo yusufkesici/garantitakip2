@@ -41,6 +41,8 @@ namespace garantiTakip
             this.comboSektor = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboDurum = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@ namespace garantiTakip
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 137);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 186);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -113,11 +115,11 @@ namespace garantiTakip
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(23, 72);
+            this.label3.Location = new System.Drawing.Point(64, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 24);
+            this.label3.Size = new System.Drawing.Size(71, 24);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Filtrele";
+            this.label3.Text = "Filtrele:";
             // 
             // comboFirmaTip
             // 
@@ -126,6 +128,7 @@ namespace garantiTakip
             this.comboFirmaTip.Name = "comboFirmaTip";
             this.comboFirmaTip.Size = new System.Drawing.Size(121, 24);
             this.comboFirmaTip.TabIndex = 9;
+            this.comboFirmaTip.SelectedIndexChanged += new System.EventHandler(this.comboFirmaTip_SelectedIndexChanged);
             // 
             // comboSektor
             // 
@@ -134,6 +137,7 @@ namespace garantiTakip
             this.comboSektor.Name = "comboSektor";
             this.comboSektor.Size = new System.Drawing.Size(121, 24);
             this.comboSektor.TabIndex = 10;
+            this.comboSektor.SelectedIndexChanged += new System.EventHandler(this.comboSektor_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -153,11 +157,31 @@ namespace garantiTakip
             this.label5.TabIndex = 12;
             this.label5.Text = "Sektör:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(611, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Durum:";
+            // 
+            // comboDurum
+            // 
+            this.comboDurum.FormattingEnabled = true;
+            this.comboDurum.Location = new System.Drawing.Point(670, 74);
+            this.comboDurum.Name = "comboDurum";
+            this.comboDurum.Size = new System.Drawing.Size(121, 24);
+            this.comboDurum.TabIndex = 13;
+            this.comboDurum.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // RaporlarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 560);
+            this.ClientSize = new System.Drawing.Size(1288, 609);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboDurum);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboSektor);
@@ -193,5 +217,7 @@ namespace garantiTakip
         private System.Windows.Forms.ComboBox comboSektor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboDurum;
     }
 }

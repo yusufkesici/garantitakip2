@@ -51,11 +51,11 @@ namespace garantiTakip
             this.müşteriYetkiliRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sonAcılanlar = new System.Windows.Forms.ToolStripMenuItem();
             this.listeleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelDurumlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.personelDurumlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -227,12 +227,19 @@ namespace garantiTakip
             this.listeleToolStripMenuItem.Text = "Listele";
             this.listeleToolStripMenuItem.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
             // 
+            // personelDurumlarıToolStripMenuItem
+            // 
+            this.personelDurumlarıToolStripMenuItem.Name = "personelDurumlarıToolStripMenuItem";
+            this.personelDurumlarıToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.personelDurumlarıToolStripMenuItem.Text = "Personel Durumları";
+            this.personelDurumlarıToolStripMenuItem.Click += new System.EventHandler(this.personelDurumlarıToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 559);
+            this.statusStrip.Location = new System.Drawing.Point(0, 600);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 22, 0);
             this.statusStrip.Size = new System.Drawing.Size(1220, 26);
@@ -251,24 +258,18 @@ namespace garantiTakip
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // personelDurumlarıToolStripMenuItem
-            // 
-            this.personelDurumlarıToolStripMenuItem.Name = "personelDurumlarıToolStripMenuItem";
-            this.personelDurumlarıToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.personelDurumlarıToolStripMenuItem.Text = "Personel Durumları";
-            this.personelDurumlarıToolStripMenuItem.Click += new System.EventHandler(this.personelDurumlarıToolStripMenuItem_Click);
-            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 585);
+            this.ClientSize = new System.Drawing.Size(1220, 626);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1238, 632);
             this.Name = "MDIParent1";
             this.Text = "MDIParent1";
             this.Load += new System.EventHandler(this.MDIParent1_Load);

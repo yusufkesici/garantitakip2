@@ -204,9 +204,9 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <EntitySet Name="tbl_cari" EntityType="stajyerModel.tbl_cari" />
     <EntitySet Name="tbl_personel" EntityType="stajyerModel.tbl_personel" />
     <EntitySet Name="tbl_yorum" EntityType="stajyerModel.tbl_yorum" />
+    <EntitySet Name="tbl_cari" EntityType="stajyerModel.tbl_cari" />
     <AssociationSet Name="FK_tbl_cari_tbl_baslangicBitisTarih" Association="stajyerModel.FK_tbl_cari_tbl_baslangicBitisTarih">
       <End Role="tbl_baslangicBitisTarih" EntitySet="tbl_baslangicBitisTarih" />
       <End Role="tbl_cari" EntitySet="tbl_cari" />
@@ -243,6 +243,11 @@
       <End Role="tbl_cari" EntitySet="tbl_cari" />
       <End Role="tbl_marka" EntitySet="tbl_marka" />
     </AssociationSet>
+    <EntitySet Name="tbl_Ariza" EntityType="stajyerModel.tbl_Ariza" />
+    <AssociationSet Name="FK_tbl_cari_tbl_Ariza" Association="stajyerModel.FK_tbl_cari_tbl_Ariza">
+      <End Role="tbl_Ariza" EntitySet="tbl_Ariza" />
+      <End Role="tbl_cari" EntitySet="tbl_cari" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -255,6 +260,29 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="tbl_personel">
+    <Key>
+      <PropertyRef Name="IND" />
+    </Key>
+    <Property Name="IND" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PERSONELAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONELSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONELMAİL" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONELTC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONELTEL" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONELADRES" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONELDURUM" Type="Boolean" />
+    <NavigationProperty Name="tbl_cari" Relationship="stajyerModel.FK_tbl_cari_tbl_personel" FromRole="tbl_personel" ToRole="tbl_cari" />
+  </EntityType>
+  <EntityType Name="tbl_yorum">
+    <Key>
+      <PropertyRef Name="IND" />
+    </Key>
+    <Property Name="IND" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YORUM" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelNo" Type="Int32" />
+    <NavigationProperty Name="tbl_cari" Relationship="stajyerModel.FK_tbl_cari_tbl_yorum" FromRole="tbl_yorum" ToRole="tbl_cari" />
+  </EntityType>
   <EntityType Name="tbl_cari">
     <Key>
       <PropertyRef Name="IND" />
@@ -293,6 +321,7 @@
     <Property Name="HIZMETTURU" Type="Int32" />
     <Property Name="BASBITTAR" Type="Int32" />
     <Property Name="PersonelYorum" Type="Int32" />
+    <Property Name="ArizaID" Type="Int32" />
     <NavigationProperty Name="tbl_baslangicBitisTarih" Relationship="stajyerModel.FK_tbl_cari_tbl_baslangicBitisTarih" FromRole="tbl_cari" ToRole="tbl_baslangicBitisTarih" />
     <NavigationProperty Name="tbl_firmaTipi" Relationship="stajyerModel.FK_tbl_cari_tbl_firmaTipi" FromRole="tbl_cari" ToRole="tbl_firmaTipi" />
     <NavigationProperty Name="tbl_hizmetturu" Relationship="stajyerModel.FK_tbl_cari_tbl_hizmetturu" FromRole="tbl_cari" ToRole="tbl_hizmetturu" />
@@ -302,29 +331,7 @@
     <NavigationProperty Name="tbl_Yetkili" Relationship="stajyerModel.FK_tbl_cari_tbl_Yetkili" FromRole="tbl_cari" ToRole="tbl_Yetkili" />
     <NavigationProperty Name="tbl_yorum" Relationship="stajyerModel.FK_tbl_cari_tbl_yorum" FromRole="tbl_cari" ToRole="tbl_yorum" />
     <NavigationProperty Name="tbl_marka" Relationship="stajyerModel.FK_tbl_marka_tbl_cari" FromRole="tbl_cari" ToRole="tbl_marka" />
-  </EntityType>
-  <EntityType Name="tbl_personel">
-    <Key>
-      <PropertyRef Name="IND" />
-    </Key>
-    <Property Name="IND" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PERSONELAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONELSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONELMAİL" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONELTC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONELTEL" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONELADRES" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="PERSONELDURUM" Type="Boolean" />
-    <NavigationProperty Name="tbl_cari" Relationship="stajyerModel.FK_tbl_cari_tbl_personel" FromRole="tbl_personel" ToRole="tbl_cari" />
-  </EntityType>
-  <EntityType Name="tbl_yorum">
-    <Key>
-      <PropertyRef Name="IND" />
-    </Key>
-    <Property Name="IND" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="YORUM" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="PersonelNo" Type="Int32" />
-    <NavigationProperty Name="tbl_cari" Relationship="stajyerModel.FK_tbl_cari_tbl_yorum" FromRole="tbl_yorum" ToRole="tbl_cari" />
+    <NavigationProperty Name="tbl_Ariza" Relationship="stajyerModel.FK_tbl_cari_tbl_Ariza" FromRole="tbl_cari" ToRole="tbl_Ariza" />
   </EntityType>
   <Association Name="FK_tbl_cari_tbl_baslangicBitisTarih">
     <End Type="stajyerModel.tbl_baslangicBitisTarih" Role="tbl_baslangicBitisTarih" Multiplicity="0..1" />
@@ -431,6 +438,45 @@
       </Principal>
       <Dependent Role="tbl_marka">
         <PropertyRef Name="FIRMANO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_Ariza">
+    <Key>
+      <PropertyRef Name="IND" />
+    </Key>
+    <Property Name="IND" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CariID" Type="Int32" />
+    <Property Name="ArızaTanim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GidilenServisSayisi" Type="Int32" />
+    <Property Name="ArizaKaynagi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EnSonGidilenServisTarih" Type="DateTime" Precision="0" />
+    <Property Name="MusteriKayitTarih" Type="DateTime" Precision="0" />
+    <Property Name="ArizaKayitTarih" Type="DateTime" Precision="0" />
+    <Property Name="MusteriYorumu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelYorumu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriAktifMi" Type="Boolean" />
+    <Property Name="MusteriAldigiHizmet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriTelefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriAdres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ArizaTür" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OnarimSüresi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="UrunTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IstenilenServisTarihi" Type="DateTime" Precision="0" />
+    <Property Name="MusteriTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_cari" Relationship="stajyerModel.FK_tbl_cari_tbl_Ariza" FromRole="tbl_Ariza" ToRole="tbl_cari" />
+  </EntityType>
+  <Association Name="FK_tbl_cari_tbl_Ariza">
+    <End Type="stajyerModel.tbl_Ariza" Role="tbl_Ariza" Multiplicity="0..1" />
+    <End Type="stajyerModel.tbl_cari" Role="tbl_cari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Ariza">
+        <PropertyRef Name="IND" />
+      </Principal>
+      <Dependent Role="tbl_cari">
+        <PropertyRef Name="ArizaID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
